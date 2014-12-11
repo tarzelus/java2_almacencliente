@@ -5,6 +5,9 @@ private String tipo;
 private String procedencia;
 private Double eurosLitro;
 private Distribuidor distribuidor;
+private int cod_barras;
+
+
 
 //métodos getter y setter
 
@@ -50,6 +53,17 @@ public String getTipo()
 			distribuidor=distribuidor1;
 		}
 
+
+
+		public int getCod_barras()
+		{
+			return cod_barras;
+		}
+		
+		public void  setCod_barras(int cod_barras1)
+		{
+			cod_barras=cod_barras1;
+		}
 
 
 
