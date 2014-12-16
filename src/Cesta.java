@@ -1,7 +1,7 @@
 public class  Cesta {
 //propiedades
 	private String nombreproducto;
-	private int precioku;
+	private Double precioku;
 	private Double preciototalp;
 	private Cliente cliente;
 	private Manzana manzana;
@@ -22,15 +22,32 @@ public class  Cesta {
 			nombreproducto=nombreproducto1;
 		}
 
-	public int getPrecioku()
+	public Double getPrecioku()
 		{
-			return precioku1;
+			return precioku;
 		}
 		
-	public void  setPrecioku(int precioku1)
+	public void  setPrecioku(Double precioku1)
 		{
 			precioku=precioku1;
 		}
+
+
+	public Double getPreciototalp()
+		{
+			return preciototalp;
+		}
+		
+	public void  setPreciototalp(Double preciototalp1)
+		{
+			preciototalp=preciototalp1;
+		}
+
+
+
+
+
+
 
 	public Cliente getCliente()
 		{
@@ -64,7 +81,7 @@ public class  Cesta {
 
 
 
-	public int getLeche()
+	public Leche getLeche()
 		{
 			return leche;
 		}

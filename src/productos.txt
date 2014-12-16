@@ -1,1 +1,1 @@
-golden,amrica,amarillo,111111.0,golden,america,amarillo,5000.0,1,1,1,1.0,
+golden,amrica,amarillo,111111.0,golden,america,amarillo,5000.0,1,1,1,1.0,1,1,1,1.0,golden,africa,amarillo,2000.0,golden,africa,rojo,100.0,
