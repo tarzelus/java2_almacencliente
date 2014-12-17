@@ -160,7 +160,7 @@ public class Principal {
 					}
 
 					//---------impresion de las manzanas con sus respectivos distribuidores-------------
-					System.out.println(" \n\n**************manzanas**************" );
+					/*System.out.println(" \n\n**************manzanas**************" );
 					for (int m=0 ; m < manzanas.size(); m++){
 
 						System.out.println(" \n\nTipo de manzana: "+manzanas.get(m).getTipoManzana() );
@@ -200,7 +200,7 @@ public class Principal {
 			            		}
 			        	}
 			        }
-
+					*/
 			        	//---------impresion de la leche con sus respectivos distribuidores-------------
 			        System.out.println(" \n\n**************Leche**************" );
 					for (int m=0 ; m < leches.size(); m++){
@@ -421,11 +421,12 @@ public class Principal {
 					   				cestas.add(cesta);
 					   				
 					   				}
-								System.out.println(" \n\nTipo de lechuga: "+lechugas.get(lechu).getTipoLechuga() );
+					   				System.out.println(cestas.get(0).getPreciototalp());
+								/*System.out.println(" \n\nTipo de lechuga: "+lechugas.get(lechu).getTipoLechuga() );
 					            System.out.println(" \nProcedencia: "+lechugas.get(lechu).getProcedencia());
 					            System.out.println(" \nColor : "+lechugas.get(lechu).getColor() );
 					            System.out.println(" \nEuros Unidad: "+lechugas.get(lechu).getEurosUniad());
-					            System.out.println(" \nCodigo de barras: "+lechugas.get(lechu).getCod_barras());
+					            System.out.println(" \nCodigo de barras: "+lechugas.get(lechu).getCod_barras());*/
 					            //System.out.println(" \nTotal "+ ge);
 							}
 	   				}
@@ -440,6 +441,8 @@ public class Principal {
 
 	   			break;
 	   		}
+
+	   		
 	   	}while (quehacer != 4);
 	   	
 	}
