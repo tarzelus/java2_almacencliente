@@ -4,9 +4,9 @@ public class  Cesta {
 	private Double precioku;
 	private Double preciototalp;
 	private Cliente cliente;
-	private Manzana manzana;
-	private Lechuga lechuga;
-	private Leche leche;
+	private Double descuento;
+
+
 
 
 
@@ -59,36 +59,16 @@ public class  Cesta {
 			cliente=cliente1;
 		}
 
-	public Manzana getManzana()
+		public Double getDescuento()
 		{
-			return manzana;
+			return descuento;
 		}
 		
-	public void  setManzana(Manzana manzana1)
+		public void  setDescuento(Double descuento1)
 		{
-			manzana=manzana1;
-		}
-
-	public Lechuga getLechuga()
-		{
-			return lechuga;
-		}
-		
-	public void  setLechuga(Lechuga lechuga1)
-		{
-			lechuga=lechuga1;
+			descuento=descuento1;
 		}
 
 
-
-	public Leche getLeche()
-		{
-			return leche;
-		}
-		
-		public void  setCod_barras(Leche leche1)
-		{
-			leche=leche1;
-		}
 }
 

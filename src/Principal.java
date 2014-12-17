@@ -103,9 +103,9 @@ public class Principal {
 						manzana.setProcedencia(sc.next());
 						System.out.println("Introduce el color de la manzana: ");
 						manzana.setColor(sc.next());
-						System.out.println("Introduce la cantidad de kilos de la manzana: ");
+						System.out.println("Introduce precio/kilo de la manzana: ");
 						manzana.setEurosKilo(sc.nextDouble());
-						System.out.println("Introduce el numero del codigo de barras: ");
+						System.out.println("Introduce el numero del codigo de barras de la manzana: ");
 						manzana.setCod_barras(sc.nextInt());
 						System.out.println("Introduce el nombre del distribuidor de la manzana: ");
 						String di = sc.next();
@@ -125,9 +125,9 @@ public class Principal {
 						leche.setTipo(sc.next());
 						System.out.println("Introduce la procedencia de la leche: ");
 						leche.setProcedencia(sc.next());
-						System.out.println("Introduce la cantidad de litros de leche: ");
+						System.out.println("Introduce la euro/litro de leche: ");
 						leche.setEurosLitro(sc.nextDouble());
-						System.out.println("Introduce el numero del codigo de barras: ");
+						System.out.println("Introduce el numero del codigo de barras de la leche: ");
 						leche.setCod_barras(sc.nextInt());
 						System.out.println("Introduce el nombre del distribuidor de la leche: ");
 						String di = sc.next();
@@ -148,9 +148,9 @@ public class Principal {
 						lechuga.setProcedencia(sc.next());
 						System.out.println("Introduce el color de la lechuga: ");
 						lechuga.setColor(sc.next());
-						System.out.println("Introduce las unidades de lechuga: ");
+						System.out.println("Introduce las precio/unidad de lechuga: ");
 						lechuga.setEurosUnidad(sc.nextDouble());
-						System.out.println("Introduce el numero del codigo de barras: ");
+						System.out.println("Introduce el numero del codigo de barras de la lechuga: ");
 						lechuga.setCod_barras(sc.nextInt());
 						System.out.println("Introduce el nombre del distribuidor de la lechuga: ");
 						String di = sc.next();
@@ -276,7 +276,7 @@ public class Principal {
 			     System.out.println(" \nQue quieres hacer?:" );
 		    	System.out.println(" \n 	1) Introducir nuevo producto" );
 		    	System.out.println(" \n 	2) Ver los Clientes" );
-		    	System.out.println(" \n 	3) Introducir nuevo producto" );
+		    	System.out.println(" \n 	3) Hacer la cesta" );
 		    	quehacer = sc.nextInt();
 
 
@@ -352,7 +352,7 @@ public class Principal {
 			    System.out.println(" \nQue quieres hacer?:" );
 		    	System.out.println(" \n 	1) Introducir nuevo producto" );
 		    	System.out.println(" \n 	2) Ver los Clientes" );
-		    	System.out.println(" \n 	3) Introducir nuevo producto" );
+		    	System.out.println(" \n 	3) Hacer la cesta" );
 		    	quehacer = sc.nextInt();
 
 
@@ -362,8 +362,11 @@ public class Principal {
 				case 3:
 	    			//-----------------cesta---------------------------
 	    			
-	    			Double condescuentol = 0.0;
+	    			Double condescuento = 0.0;
 	    			Double descuento1 = 0.0;
+	    			Double totala = 0.0;
+
+
 
 				   	System.out.println("************Cesta*********** ");	   
 				   	System.out.println("Introduce el codigo del cliente:");
@@ -410,6 +413,56 @@ public class Principal {
 
 					   	System.out.println("Introduce el codigo de barras del producto que quieras añadir a la cesta:");
 					   		int codigo=sc.nextInt();
+
+
+
+
+					   		//para recorrer manzanas
+							for (int manz=0 ; manz < manzanas.size(); manz++){
+					   				
+					   				if  (codigo == manzanas.get(manz).getCod_barras()){
+					   				Cesta cesta = new Cesta();
+					   				cesta.setNombreproducto(manzanas.get(manz).getTipoManzana());
+					   				cesta.setPrecioku(manzanas.get(manz).getEurosKilo());
+
+					   				System.out.println("Cuantas manzanas: ");
+					   				Double cuantas = sc.nextDouble();
+
+					   				Double precio = cuantas * manzanas.get(manz).getEurosKilo();
+					   				cesta.setPreciototalp(precio);
+					   				condescuento = (1-descuento1) * precio;
+					   				cesta.setDescuento(condescuento); 
+
+					   				cestas.add(cesta);
+					   				
+					   				}
+					   				
+						
+							}
+					//para recorrer leches
+							for (int lech=0 ; lech < leches.size(); lech++){
+					   				
+					   				if  (codigo == leches.get(lech).getCod_barras()){
+					   				Cesta cesta = new Cesta();
+					   				cesta.setNombreproducto(leches.get(lech).getTipo());
+					   				cesta.setPrecioku(leches.get(lech).getEurosLitro());
+
+					   				System.out.println("Cuantas leches: ");
+					   				Double cuantas = sc.nextDouble();
+
+					   				Double precio = cuantas * leches.get(lech).getEurosLitro();
+					   				cesta.setPreciototalp(precio);
+					   				condescuento = (1-descuento1) * precio;
+					   				cesta.setDescuento(condescuento); 
+
+					   				cestas.add(cesta);
+					   				
+					   				}
+					   				
+						
+							}
+
+					   		//para recorrer el array de lechugas
 					   		for (int lechu=0 ; lechu < lechugas.size(); lechu++){
 					   				
 					   				if  (codigo == lechugas.get(lechu).getCod_barras()){
@@ -418,30 +471,44 @@ public class Principal {
 					   				cesta.setPrecioku(lechugas.get(lechu).getEurosUniad());
 
 					   				System.out.println("Cuantas lechugas: ");
-					   				Double cuantasl = sc.nextDouble();
+					   				Double cuantas = sc.nextDouble();
 
-					   				Double preciol = cuantasl * lechugas.get(lechu).getEurosUniad();
-					   				cesta.setPreciototalp(preciol);
-					   				condescuentol = (1-descuento1) * preciol; 
+					   				Double precio = cuantas * lechugas.get(lechu).getEurosUniad();
+					   				cesta.setPreciototalp(precio);
+					   				condescuento = (1-descuento1) * precio;
+					   				cesta.setDescuento(condescuento); 
 
 					   				cestas.add(cesta);
 					   				
 					   				}
-					   				System.out.println(cestas.get(0).getPreciototalp());
-					   				System.out.println(condescuentol);
-								/*System.out.println(" \n\nTipo de lechuga: "+lechugas.get(lechu).getTipoLechuga() );
-					            System.out.println(" \nProcedencia: "+lechugas.get(lechu).getProcedencia());
-					            System.out.println(" \nColor : "+lechugas.get(lechu).getColor() );
-					            System.out.println(" \nEuros Unidad: "+lechugas.get(lechu).getEurosUniad());
-					            System.out.println(" \nCodigo de barras: "+lechugas.get(lechu).getCod_barras());*/
-					            //System.out.println(" \nTotal "+ ge);
+					   				
+						
 							}
+							
+
+							System.out.println(cestas.get(ces).getPreciototalp());
+					   		System.out.println(condescuento);
 	   				}
+
+	   				for (int cest=0 ; cest < cestas.size(); cest++){
+	   					System.out.println(" \nNombre del producto: "+cestas.get(cest).getNombreproducto() );
+	   					System.out.println(" \nPrecio unidad/kilo: "+cestas.get(cest).getPrecioku() );
+	   					System.out.println(" \nPrecio sin descuento: "+cestas.get(cest).getPreciototalp() );
+
+
+
+	   					totala = totala + cestas.get(cest).getDescuento();
+	   				
+
+	   				}
+
+	   			System.out.println(" Este es el valor de la compra con descuento "+totala );	
+
 
 		   		System.out.println(" \nQue quieres hacer?:" );
 		    	System.out.println(" \n 	1) Introducir nuevo producto" );
 		    	System.out.println(" \n 	2) Ver los Clientes" );
-		    	System.out.println(" \n 	3) Introducir nuevo producto" );
+		    	System.out.println(" \n 	3) Hacer la cesta" );
 		    	quehacer = sc.nextInt();
 
 
