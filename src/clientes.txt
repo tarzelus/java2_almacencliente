@@ -1,2 +1,2 @@
-Telmo,Arzelus,77777777R,1111,20#Donostia,Urbieta,5,45,20006
-Telmo,Arzelus,77777777R,1111,20#Donostia,Urbieta,5,45,20006
+Telmo,Arzelus,77777777R,1111,0.20#Donostia,Urbieta,5,45,20006
+Telmo,Arzelus,77777777R,1111,0.20#Donostia,Urbieta,5,45,20006

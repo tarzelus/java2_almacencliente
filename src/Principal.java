@@ -12,6 +12,7 @@ public class Principal {
 
 		ArrayList<Cesta> cestas = new ArrayList<Cesta>();
 		
+		
 		ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
 		try{
 
@@ -360,8 +361,10 @@ public class Principal {
 	
 				case 3:
 	    			//-----------------cesta---------------------------
-	    
-	    		
+	    			
+	    			Double condescuentol = 0.0;
+	    			Double descuento1 = 0.0;
+
 				   	System.out.println("************Cesta*********** ");	   
 				   	System.out.println("Introduce el codigo del cliente:");
 				   		int numcli = sc.nextInt();
@@ -378,10 +381,9 @@ public class Principal {
 							       
 							        while(salida4!=null){
 							        	//separa el string de la  linea usara el ; como referencia de la separacion
+							        	
 							        	String [] cortarString4 = salida4.split("#");
-							         	
-
-							       		Cliente cliente = new Cliente();
+							         	Cliente cliente = new Cliente();
 							       		String [] cortarString5 = cortarString4[0].split(",");
 							       		cliente.setNombre (cortarString5[0]);
 							       		cliente.setApellidos (cortarString5[1]);
@@ -389,7 +391,10 @@ public class Principal {
 							       		cliente.setNum_socio (Double.parseDouble(cortarString5[3]));
 							       		cliente.setDto (Double.parseDouble(cortarString5[4]));
 							       		
-
+							       		Double nc =Double.parseDouble(cortarString5[3]);
+							       		if (numcli == nc){
+							       			descuento1= Double.parseDouble(cortarString5[4]);
+							       		}
 							       		
 							       		salida4 = bf4.readLine();
 							        }
@@ -417,11 +422,13 @@ public class Principal {
 
 					   				Double preciol = cuantasl * lechugas.get(lechu).getEurosUniad();
 					   				cesta.setPreciototalp(preciol);
+					   				condescuentol = (1-descuento1) * preciol; 
 
 					   				cestas.add(cesta);
 					   				
 					   				}
 					   				System.out.println(cestas.get(0).getPreciototalp());
+					   				System.out.println(condescuentol);
 								/*System.out.println(" \n\nTipo de lechuga: "+lechugas.get(lechu).getTipoLechuga() );
 					            System.out.println(" \nProcedencia: "+lechugas.get(lechu).getProcedencia());
 					            System.out.println(" \nColor : "+lechugas.get(lechu).getColor() );
