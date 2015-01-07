@@ -36,12 +36,12 @@ public class Principal {
 	        
 	        	
 	       		Distribuidor distribuidor = new Distribuidor();
-	       		cortarString1 = cortarString[0].split(",");
-	       		distribuidor.setNombre (cortarString1[0]);
-	       		distribuidor.setCif (cortarString1[1]);
+	       		//cortarString1 = cortarString[0].split(",");
+	       		distribuidor.setNombre (cortarString[0]);
+	       		distribuidor.setCif (cortarString[1]);
 
 	       		Direccion direccion = new Direccion();
-	       		cortarString2 = cortarString[1].split(",");
+	       		cortarString2 = cortarString[2].split(",");
 	       		direccion.setCiudad  (cortarString2[0]);
 	       		direccion.setCalle  (cortarString2[1]);
 	       		direccion.setPiso  (cortarString2[2]);
@@ -50,7 +50,7 @@ public class Principal {
 	       		distribuidor.setDireccion(direccion);
 
 	       		Contacto contacto = new Contacto();
-	       		cortarString3 = cortarString[2].split(",");
+	       		cortarString3 = cortarString[3].split(",");
 	       		contacto.setNombre (cortarString3[0]);
 	       		contacto.setApellido (cortarString3[1]);
 	       		contacto.setDni (cortarString3[2]);
@@ -76,7 +76,7 @@ public class Principal {
 	    	System.out.println(" \nQue quieres hacer?:" );
 	    	System.out.println(" \n 	1) Introducir nuevo producto" );
 	    	System.out.println(" \n 	2) Ver los Clientes" );
-	    	System.out.println(" \n 	3) Introducir nuevo producto" );
+	    	System.out.println(" \n 	3) Crear Cesta" );
 	    	quehacer = sc.nextInt();
 
 	    	//----para escribir fichero de productos.txt
@@ -201,7 +201,8 @@ public class Principal {
 			            		}
 			        	}
 			        }
-					*/
+			        */
+					
 			        	//---------impresion de la leche con sus respectivos distribuidores-------------
 			        System.out.println(" \n\n**************Leche**************" );
 					for (int m=0 ; m < leches.size(); m++){
