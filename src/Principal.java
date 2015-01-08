@@ -75,26 +75,32 @@ public class Principal {
 	    	int quehacer = 0;
 	    	System.out.println(" \nQue quieres hacer?:" );
 	    	System.out.println(" \n 	1) Introducir nuevo producto" );
-	    	System.out.println(" \n 	2) Ver los Clientes" );
-	    	System.out.println(" \n 	3) Crear Cesta" );
+	    	System.out.println(" \n 	2) Lectura de productos" );
+	    	System.out.println(" \n 	3) Ver los Clientes" );
+	    	System.out.println(" \n 	4) Crear Cesta" );
 	    	quehacer = sc.nextInt();
 
 	    	//----para escribir fichero de productos.txt
 	    	FileWriter fw = new FileWriter("/home/zubiri/Proyectosjava/java2_almacencliente/src/productos.txt" , true);
 			BufferedWriter bw = new BufferedWriter(fw);
 
+			//definicion de los arraylist (distribuidores lechuga/manzana/leche)
+	        		ArrayList<String> distribuman = new ArrayList<String>();
+			        ArrayList<String> distribuleche = new ArrayList<String>();
+			        ArrayList<String> distribulechu = new ArrayList<String>();
+
 			do{
 
 	        switch (quehacer){
+
+
 
 	        	case 1:
 		        //-----------------Introducccion de datos de las manzanas------------------
 
 			        
 			        
-			        ArrayList<String> distribuman = new ArrayList<String>();
-			        ArrayList<String> distribuleche = new ArrayList<String>();
-			        ArrayList<String> distribulechu = new ArrayList<String>();
+
 					for (int m=0 ; m<2 ; m++){
 						Manzana manzana = new Manzana();
 						System.out.println("Introduce el tipo de manzana: ");
@@ -160,8 +166,11 @@ public class Principal {
 					
 					}
 
-					//---------impresion de las manzanas con sus respectivos distribuidores-------------
-					/*System.out.println(" \n\n**************manzanas**************" );
+					break;
+					case 2:
+
+					//---------impresion de los productos-------------
+					System.out.println(" \n\n**************manzanas**************" );
 					for (int m=0 ; m < manzanas.size(); m++){
 
 						System.out.println(" \n\nTipo de manzana: "+manzanas.get(m).getTipoManzana() );
@@ -201,7 +210,7 @@ public class Principal {
 			            		}
 			        	}
 			        }
-			        */
+			        
 					
 			        	//---------impresion de la leche con sus respectivos distribuidores-------------
 			        System.out.println(" \n\n**************Leche**************" );
@@ -275,9 +284,10 @@ public class Principal {
 			        }
 
 			     System.out.println(" \nQue quieres hacer?:" );
-		    	System.out.println(" \n 	1) Introducir nuevo producto" );
-		    	System.out.println(" \n 	2) Ver los Clientes" );
-		    	System.out.println(" \n 	3) Hacer la cesta" );
+		    System.out.println(" \n 	1) Introducir nuevo producto" );
+	    	System.out.println(" \n 	2) Lectura de productos" );
+	    	System.out.println(" \n 	3) Ver los Clientes" );
+	    	System.out.println(" \n 	4) Crear Cesta" );
 		    	quehacer = sc.nextInt();
 
 
@@ -290,7 +300,7 @@ public class Principal {
 			    //-----------------clientes-------------------------------------------------------------------------------
 
 			    //--lectura de fichero de clientes
-			    case 2:
+			    case 3:
 			    	ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
 				    try{
@@ -352,15 +362,16 @@ public class Principal {
 
 			    System.out.println(" \nQue quieres hacer?:" );
 		    	System.out.println(" \n 	1) Introducir nuevo producto" );
-		    	System.out.println(" \n 	2) Ver los Clientes" );
-		    	System.out.println(" \n 	3) Hacer la cesta" );
+		    	System.out.println(" \n 	2) Lectura de productos" );
+		    	System.out.println(" \n 	3) Ver los Clientes" );
+		    	System.out.println(" \n 	4) Crear Cesta" );
 		    	quehacer = sc.nextInt();
 
 
 
 				break;
 	
-				case 3:
+				case 4:
 	    			//-----------------cesta---------------------------
 	    			
 	    			Double condescuento = 0.0;
@@ -508,8 +519,9 @@ public class Principal {
 
 		   		System.out.println(" \nQue quieres hacer?:" );
 		    	System.out.println(" \n 	1) Introducir nuevo producto" );
-		    	System.out.println(" \n 	2) Ver los Clientes" );
-		    	System.out.println(" \n 	3) Hacer la cesta" );
+		    	System.out.println(" \n 	2) Lectura de productos" );
+		    	System.out.println(" \n 	3) Ver los Clientes" );
+		    	System.out.println(" \n 	4) Crear Cesta" );
 		    	quehacer = sc.nextInt();
 
 
