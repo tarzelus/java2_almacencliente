@@ -98,10 +98,10 @@ public class Principal {
 	        	case 1:
 		        //-----------------Introducccion de datos de las manzanas------------------
 
+	        		System.out.println("Intruduce la cantidad de tipos de manzana: ");
+						int cuantasman=sc.nextInt();
 			        
-			        
-
-					for (int m=0 ; m<2 ; m++){
+			       	for (int m=0 ; m<cuantasman ; m++){
 						Manzana manzana = new Manzana();
 						System.out.println("Introduce el tipo de manzana: ");
 						manzana.setTipoManzana(sc.next());
@@ -123,9 +123,11 @@ public class Principal {
 
 					//-----------------Introducccion de datos de la leche------------------
 
+					System.out.println("Intruduce la cantidad de tipos de leche: ");
+					int cuantasleche=sc.nextInt();
 					
-						System.out.println("**************leche************** ");
-					for (int l=0 ; l<2 ; l++){
+					System.out.println("**************leche************** ");
+					for (int l=0 ; l<cuantasleche ; l++){
 						Leche leche = new Leche();
 						System.out.println("Introduce el tipo de leche: ");
 						leche.setTipo(sc.next());
@@ -143,10 +145,11 @@ public class Principal {
 					}
 
 					//-----------------Introducccion de datos de las lechugas ------------------
-
+					System.out.println("Intruduce la cantidad de tipos de lechugas: ");
+					int cuantaslechu=sc.nextInt();
 						
 						System.out.println("**************lechugas************** ");
-					for (int g=0 ; g<=0 ; g++){
+					for (int g=0 ; g<=cuantaslechu ; g++){
 						Lechuga lechuga = new Lechuga();
 						System.out.println("Introduce el tipo de lechuga: ");
 						lechuga.setTipoLechuga(sc.next());
